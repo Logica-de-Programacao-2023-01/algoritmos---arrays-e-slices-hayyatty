@@ -1,20 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	list := []int{1, 2, 3, 4, 5, 6}
-	var i, j int
+	var (
+		ind1, ind2 int
+	)
+	list := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	indx := []int{0, 1, 2, 3, 4, 5, 6, 7}
+	fmt.Println(list)
+	fmt.Println(indx)
+	fmt.Println("Qual o indice dos elementos que devem ser trocados de lugar")
+	fmt.Scan(&ind1)
+	fmt.Scan(&ind2)
+	trocar(ind1, ind2, list)
+	fmt.Println(list)
+}
 
-	fmt.Print("Digite o primeiro indice :")
-	fmt.Scan(&i)
-	fmt.Println("Digite o segundo indice :")
-	fmt.Scan(&j)
-
-	aux := list[i]
-	list[i] = list[j]
-	list[j] = aux
-
-	fmt.Print("O slice resultante é :", list)
-
+func trocar(ind1 int, ind2 int, list []int) {
+	x := list[ind1]
+	list[ind1] = list[ind2]
+	list[ind2] = x
 }
